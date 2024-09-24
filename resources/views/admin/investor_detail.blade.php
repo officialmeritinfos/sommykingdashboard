@@ -102,8 +102,8 @@
                             <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>${{number_format($investor->balance,2)}}</td>
-                                <td>${{number_format($investor->loan,2)}}</td>
+{{--                                <td>${{number_format($investor->balance,2)}}</td>--}}
+{{--                                <td>${{number_format($investor->loan,2)}}</td>--}}
                                 <td>${{number_format($investor->profit,2)}}</td>
                                 <td>${{number_format($investor->withdrawals,2)}}</td>
                                 <td>${{number_format($investor->refBal,2)}}</td>
