@@ -89,9 +89,9 @@
                             <thead style="background-color:#84B0CA ;" class="text-white">
                             <tr>
                                 <th scope="col">#</th>
+{{--                                <th scope="col">Account Balance</th>--}}
+{{--                                <th scope="col">Loan Balance</th>--}}
                                 <th scope="col">Account Balance</th>
-                                <th scope="col">Loan Balance</th>
-                                <th scope="col">Profit Balance</th>
                                 <th scope="col">Withdrawals</th>
                                 <th scope="col">Referral Balance</th>
                                 <th scope="col">2FA</th>
@@ -154,12 +154,12 @@
                                         <a href="{{route('admin.investor.deactivate.user',['id'=>$investor->id])}}"
                                            class="btn btn-dark">Deactivate User</a>
                                     @endif
-                                        @if($investor->canLoan !=1)
+                                        @if($investor->canCompound !=1)
                                             <a href="{{route('admin.investor.activate.loan',['id'=>$investor->id])}}"
-                                               class="btn btn-success">Activate Loaning</a>
+                                               class="btn btn-success">Activate Reinvestment</a>
                                         @else
                                             <a href="{{route('admin.investor.deactivate.loan',['id'=>$investor->id])}}"
-                                               class="btn btn-dark">Deactivate Loaning</a>
+                                               class="btn btn-dark">Deactivate Reinvestment</a>
                                         @endif
                             </div>
                         </div>
@@ -168,21 +168,21 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class=" text-center">
-                                <button class="btn btn-info"
-                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#addFunds">
-                                    Add Balance
-                                </button>
-                                <button class="btn btn-outline-info"
-                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#subFunds">
-                                    Remove Balance
-                                </button>
+{{--                                <button class="btn btn-info"--}}
+{{--                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#addFunds">--}}
+{{--                                    Add Balance--}}
+{{--                                </button>--}}
+{{--                                <button class="btn btn-outline-info"--}}
+{{--                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#subFunds">--}}
+{{--                                    Remove Balance--}}
+{{--                                </button>--}}
                                 <button class="btn btn-primary"
                                         style="margin-bottom:4px;" data-toggle="modal" data-target="#addProfit">
-                                    Add Profit
+                                    Add Balance
                                 </button>
                                 <button class="btn btn-outline-primary"
                                         style="margin-bottom:4px;" data-toggle="modal" data-target="#subProfit">
-                                    Remove Profit
+                                    Remove Balance
                                 </button>
                                 <button class="btn btn-success"
                                         style="margin-bottom:4px;" data-toggle="modal" data-target="#addRef">
@@ -201,14 +201,14 @@
                                     Remove Withdrawal
                                 </button>
 
-                                <button class="btn btn-info"
-                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#addLoan">
-                                    Add Loan
-                                </button>
-                                <button class="btn btn-outline-info"
-                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#subLoan">
-                                    Clear Loan
-                                </button>
+{{--                                <button class="btn btn-info"--}}
+{{--                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#addLoan">--}}
+{{--                                    Add Loan--}}
+{{--                                </button>--}}
+{{--                                <button class="btn btn-outline-info"--}}
+{{--                                        style="margin-bottom:4px;" data-toggle="modal" data-target="#subLoan">--}}
+{{--                                    Clear Loan--}}
+{{--                                </button>--}}
                             </div>
                         </div>
                     </div>

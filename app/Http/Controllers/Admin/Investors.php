@@ -84,7 +84,7 @@ class Investors extends Controller
     public function activateLoan($id)
     {
         $data =[
-            'canLoan'=>1
+            'canCompound'=>1
         ];
         User::where('id',$id)->update($data);
 
@@ -93,7 +93,7 @@ class Investors extends Controller
     public function deactivateLoan($id)
     {
         $data =[
-            'canLoan'=>2
+            'canCompound'=>2
         ];
         User::where('id',$id)->update($data);
 
@@ -191,10 +191,10 @@ class Investors extends Controller
         if ($update){
             //send mail to investor
             $userMessage = "
-                Your Profit balance has been credited with $<b>" . $input['amount'] . " .
+                Your Account balance has been credited with $<b>" . $input['amount'] . " .
             ";
             //SendInvestmentNotification::dispatch($investor, $userMessage, 'Profit Topup');
-            $investor->notify(new InvestmentMail($investor, $userMessage, 'Profit Topup'));
+            $investor->notify(new InvestmentMail($investor, $userMessage, 'Account Credit Notification'));
         }
         return back()->with('success','Profit added');
     }

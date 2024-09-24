@@ -17,7 +17,7 @@
                     <form class="row g-3" method="post" action="{{route('investment.new')}}">
                         @csrf
                         @include('templates.notification')
-                    
+
                         <div class="form-group col-md-12">
                             <label for="inputAddress2">Amount ($)</label>
                             <input type="number" class="form-control form-control-lg" id="inputAddress2"
@@ -45,7 +45,7 @@
                             </select>
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="inputAddress2">Asset</label> 
+                            <label for="inputAddress2">Asset</label>
                             <select type="number" class="form-control form-control-lg" id="inputAddress2"
                                     name="asset">
                                 <option value="">Select an Asset</option>
@@ -60,7 +60,9 @@
                                     name="account">
                                 <option value="">Select a Account</option>
                                 <option value="1"> New Deposit</option>
-                                <option value="2">Profit Balance</option>
+                                @if($user->canCompound==1)
+                                    <option value="2">Account Balance Balance</option>
+                                @endif
                             </select>
                         </div>
                         <div class="text-center">
